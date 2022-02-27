@@ -16,6 +16,15 @@ func ConvertToInt(s string) int {
 	return n
 }
 
+func BinaryConvertToInt(s string) int64 {
+	n, err := strconv.ParseInt(s, 2, 64)
+	if err != nil {
+		log.Printf("Error when converting to integer: %s", s)
+	}
+
+	return n
+}
+
 func GetFileLines(fileName string) []string {
 	file, err := ioutil.ReadFile(fileName)
 	if err != nil {
